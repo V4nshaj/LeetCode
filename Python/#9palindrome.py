@@ -1,4 +1,13 @@
 #9. Palindrome Number
+
+#Runtime
+# 26 ms
+# Beats 95.57%
+# Analyze Complexity
+# Memory
+# 11.39 MB
+# Beats 98.32%
+
 # Given an integer x, return true if x is a palindrome, and false otherwise.
 
 # Example 1:
@@ -19,19 +28,13 @@
 # Constraints: -231 <= x <= 231 - 1
 
 #Solution:
+
 class Solution(object):
     def isPalindrome(self, x):
         num=str(x)
-        num_rev=''
-        i=len(num)-1
-        if(x<0):#if negative return false as it is already
-            return False
-        else:
-            while i>=0:
-                num_rev =num_rev+num[i]
-                i=i-1
+        if(x>=0):#if negative return false as it is already
+            num_rev = num[::-1]
             if num == num_rev:
                 return True
-                
-            else:
-                return False
+        
+        return False
